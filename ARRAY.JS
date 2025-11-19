@@ -94,32 +94,49 @@
 // console.log(SumofPrimes([1,2,3,4,5,6,7]))
 
 
-function thirdLargest(arr)
-{
-    let first=-Infinity,second=-Infinity,third=-Infinity;
+// function thirdLargest(arr)
+// {
+//     let first=-Infinity,second=-Infinity,third=-Infinity;
     
-    for(let a of arr)
-    {
-        if(a>first)
-        {
-            third=second;
-            second=first;
-            first=a;
-        }
-        else if(a>second && a!==first)
-        {
-            third=second;
-            second=a;
-        }
+//     for(let a of arr)
+//     {
+//         if(a>first)
+//         {
+//             third=second;
+//             second=first;
+//             first=a;
+//         }
+//         else if(a>second && a!==first)
+//         {
+//             third=second;
+//             second=a;
+//         }
         
-        else if(a>third && a!==second)
+//         else if(a>third && a!==second)
+//         {
+//             third=a;
+//         }
+//     }
+    
+//     return third;
+// }
+
+// let arr=[10,20,30,40,50];
+// console.log(thirdLargest(arr))
+
+function commonElements(arr1,arr2)
+{
+    let res=[];
+    for(let i=0;i<arr1.length;i++)
+    {
+        for(let j=0;j<arr2.length;j++)
         {
-            third=a;
+            if(arr1[i]===arr2[j])
+            res.push(arr1[i])
         }
     }
-    
-    return third;
+    return res;
 }
 
-let arr=[10,20,30,40,50];
-console.log(thirdLargest(arr))
+
+console.log(commonElements([1,2,3],[2,3,4]))
